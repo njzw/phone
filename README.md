@@ -9,7 +9,7 @@ a classic wrapper for `jenesiszw/phone_lib:dev-master` I used everyday for Larav
 ### Installtion
 
 ```
-composer require njzw/phone_lib:dev-master
+ composer require nigel/phone_lib:dev-master
 ```
 
 ---
