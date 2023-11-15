@@ -9,7 +9,7 @@ a classic wrapper for `jenesiszw/phone_lib:dev-master` I used everyday for Larav
 ### Installtion
 
 ```
- composer require nigel/phone_lib:dev-master
+ composer require nigel/phone_lib:dev-master jenesiszw/phone_lib:dev-master
 ```
 
 ---
@@ -21,7 +21,7 @@ a classic wrapper for `jenesiszw/phone_lib:dev-master` I used everyday for Larav
 
 use JenesisZw\Phone;
 
-require __DIR__ . '/vendor/autoload.php'';
+require __DIR__ . '/vendor/autoload.php';
 
 ```
 
@@ -81,4 +81,3 @@ dd($test);
 - get country name from the parsed number
 
 ---
-
