@@ -1,0 +1,24 @@
+{
+    "name": "nigel/phone_lib",
+    "description": "Implementation of jenesiszw/phone_lib",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JenesisZw\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nigel Jaure",
+            "email": "nigeljaure.t@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "jenesiszw/phone_lib": "dev-master"
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
