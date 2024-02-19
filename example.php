@@ -6,7 +6,7 @@ require __DIR__ . '/src/bootstrap/app.php';
 
 $phone = "0782000340"; // Zimbabwe Econet Number
 
-$test = (new Phone($phone, 'ZW'))->getProviderInfo();
+$test = (new Phone($phone, 'ZW'))->providerInfo();
 
 
 function dd($data)

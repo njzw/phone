@@ -1,6 +1,6 @@
 # jenesiszw phone_lib
 
-a classic wrapper for `jenesiszw/phone_lib:dev-master` I used everyday for Laravel/PHP apps.
+a classic phone number library.
 
 ## Get Started
 
@@ -66,7 +66,7 @@ dd($test);
 1. isValid()
 
 - check if number is valid or not
-- returns bool
+
 
 2. internationalFormat()
 
@@ -80,8 +80,12 @@ dd($test);
 
 - get country name from the parsed number
 
-5. getProviderInfo()
+5. providerInfo()
 
 - get provider info from the parsed number
+
+6. timeZoneInfo()
+
+- get timezone info from the parsed number
 
 ---

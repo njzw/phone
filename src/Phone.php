@@ -22,9 +22,13 @@ class Phone
      */
     public function internationalFormat()
     {
-        $phone = (new Lib($this->phone, $this->countryCode))->parse()->getE164Format()->done();
+        try {
+            $phone = (new Lib($this->phone, $this->countryCode))->parse()->getE164Format()->done();
 
-        return str_replace("+", "", $phone['standardFormat']);
+            return str_replace("+", "", $phone['standardFormat']);
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
 
     /**
@@ -34,9 +38,13 @@ class Phone
      */
     public function nationalFormat()
     {
-        $phone = (new Lib($this->phone, $this->countryCode))->parse()->getNationalFormat()->done();
+        try {
+            $phone = (new Lib($this->phone, $this->countryCode))->parse()->getNationalFormat()->done();
 
-        return str_replace("+", "", $phone['nationalFormat']);
+            return str_replace("+", "", $phone['nationalFormat']);
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
 
 
@@ -47,9 +55,13 @@ class Phone
      */
     public function isValid()
     {
-        $phone = (new Lib($this->phone, $this->countryCode))->parse()->getIsValid()->done();
+        try {
+            $phone = (new Lib($this->phone, $this->countryCode))->parse()->getIsValid()->done();
 
-        return $phone['isValid'];
+            return $phone['isValid'];
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
 
     /**
@@ -59,9 +71,13 @@ class Phone
      */
     public function getCountry()
     {
-        $phone = (new Lib($this->phone, $this->countryCode))->parse()->getPhoneDescription()->done();
+        try {
+            $phone = (new Lib($this->phone, $this->countryCode))->parse()->getPhoneDescription()->done();
 
-        return $phone['country'];
+            return $phone['country'];
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
 
     /**
@@ -69,10 +85,30 @@ class Phone
      *
      * @return string
      */
-    public function getProviderInfo()
+    public function providerInfo()
     {
-        $phone = (new Lib($this->phone, $this->countryCode))->parse()->getCarrierProvider()->done();
+        try {
+            $phone = (new Lib($this->phone, $this->countryCode))->parse()->getCarrierProvider()->done();
 
-        return $phone['carrierProvider'];
+            return $phone['carrierProvider'];
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
+    }
+
+    /**
+     * get timezone from phone
+     *
+     * @return string
+     */
+    public function timeZoneInfo()
+    {
+        try {
+            $phone = (new Lib($this->phone, $this->countryCode))->parse()->getTimeZone()->done();
+
+            return $phone['timeZone'];
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
 }
