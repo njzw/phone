@@ -63,4 +63,16 @@ class Phone
 
         return $phone['country'];
     }
+
+    /**
+     * get country name from phone
+     *
+     * @return string
+     */
+    public function getProviderInfo()
+    {
+        $phone = (new Lib($this->phone, $this->countryCode))->parse()->getCarrierProvider()->done();
+
+        return $phone['carrierProvider'];
+    }
 }

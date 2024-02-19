@@ -80,4 +80,8 @@ dd($test);
 
 - get country name from the parsed number
 
+5. getProviderInfo()
+
+- get provider info from the parsed number
+
 ---
